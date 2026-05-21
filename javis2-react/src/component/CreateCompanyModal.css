@@ -1,0 +1,113 @@
+/* 화면 전체를 덮는 어두운 오버레이 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(5, 5, 10, 0.8); /* 아주 어두운 남색 배경 */
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* 반투명 유리 질감의 모달 본체 */
+.modal-content {
+    background: rgba(16, 24, 32, 0.65);
+    border: 1px solid rgba(0, 212, 255, 0.4); /* 네온 블루 테두리 */
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2); /* 블루 글로우 효과 */
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 30px;
+    width: 450px;
+    color: #e0f7fa;
+}
+
+.modal-title {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 1.5rem;
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    color: #a8d5e2;
+}
+
+/* 텍스트 입력창 스타일 */
+.cyber-input {
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.cyber-input:focus {
+    border-color: #00d4ff;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+}
+
+.cyber-textarea {
+    resize: vertical;
+}
+
+/* 하단 버튼 영역 */
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.btn-cancel {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ccc;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-cancel:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #005f73, #0a9396);
+    border: 1px solid #00d4ff;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    transition: 0.2s;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background: linear-gradient(135deg, #0a9396, #00d4ff);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+}
+
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

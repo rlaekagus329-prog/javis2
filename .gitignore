@@ -1,0 +1,78 @@
+# =========================================================================
+# 1. Project Specific (보안 및 DB / 최우선 차단)
+# =========================================================================
+.env
+.env.*
+javis_memory_db/
+javis2-flask/DB/pg_data/
+
+# =========================================================================
+# 2. Python / Flask (AI & Backend)
+# =========================================================================
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# =========================================================================
+# 3. Node.js / React (Frontend)
+# =========================================================================
+node_modules/
+npm-debug.log
+yarn-error.log
+javis2-react/build/
+javis2-react/dist/
+
+# =========================================================================
+# 4. Java / Spring Boot / Gradle
+# =========================================================================
+HELP.md
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# =========================================================================
+# 5. IDE / Editor 설정 파일
+# =========================================================================
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+# Eclipse / STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# =========================================================================
+# 6. OS / System Files
+# =========================================================================
+.DS_Store
+Thumbs.db

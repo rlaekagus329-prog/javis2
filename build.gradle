@@ -1,0 +1,51 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.4'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.javis2'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// 1. Web & JPA (기본)
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web' // webmvc 대신 starter-web 권장
+
+	// 2. Flask AI 서버와 통신하기 위한 필수 도구 (WebClient)
+	// 리액트 -> 스프링부트 -> Flask 통신을 위해 꼭 필요합니다!
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	// 4. 유틸리티 (Lombok, Devtools)
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// 5. 테스트
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+springBoot {
+	mainClass = 'com.example.javis2.javis2Application'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
